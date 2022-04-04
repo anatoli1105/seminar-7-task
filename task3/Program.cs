@@ -1,4 +1,6 @@
-﻿int [,] MayArray(int row, int colump)
+﻿// Задайте двумерный массив. Введите элемент, и найдите первое его вхождение,
+ //выведите позиции по горизонтали и вертикали, или напишите, что такого элемента нет.
+int [,] MayArray(int row, int colump)
 {
     int[,] array = new int[row, colump];
     Random rnd = new Random();
