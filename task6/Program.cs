@@ -1,4 +1,8 @@
-﻿int [,] MayArray(int row, int colump)
+﻿//Задача 3: Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+//Например, задан массив:
+
+
+int [,] MayArray(int row, int colump)
 {
     int[,] array = new int[row, colump];
     Random rnd = new Random();
