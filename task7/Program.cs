@@ -1,9 +1,9 @@
 ﻿//Задача 2: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает
  //значение этого элемента или же указание, что такого элемента нет.
 
-int [,] MayArray(int row, int colump)
+int [,] MayArray(int row, int column)
 {
-    int[,] array = new int[row, colump];
+    int[,] array = new int[row, column];
     Random rnd = new Random();
     for (int i=0;i<array.GetLength(0);i++)
     {
@@ -14,6 +14,7 @@ int [,] MayArray(int row, int colump)
     }
 return array;
 }
+
 void PrintArray(int[,]array)
 {
     for (int i=0;i<array.GetLength(0);i++)
@@ -21,6 +22,7 @@ void PrintArray(int[,]array)
         for (int j=0;j<array.GetLength(1);j++)
         {
             Console.Write($"{array[i,j]}   ");
+      
         }
        Console.WriteLine();  
     }
@@ -29,21 +31,23 @@ void PrintArray(int[,]array)
 int [,] array = MayArray(4,4);
 PrintArray(array);
 Console.Write("введите индекс вертикали > ");
-    string strA = Console.ReadLine();
-    int A =int.Parse(strA);
+    string strrow = Console.ReadLine();
+    int row =int.Parse(strrow);
 Console.Write("введите индекс горизонтали >  ");
-    string strN = Console.ReadLine();
-    int N =int.Parse(strN);
-void NamberArray(int[,]array,int A,int N)
+    string strcolumn = Console.ReadLine();
+    int column =int.Parse(strcolumn);
+void NamberArray(int[,]array,int row,int column)
 {
-  A -=1;
-  N -=1;
-    if(array.GetLength(0) <= A && array.GetLength(1) <= N)
+  row -=1;
+  column -=1;
+    if(array.GetLength(0) <= row)
      Console.Write($" позиции  нет ");
-     else Console.Write($"на позиции {A+1},{N+1} находится число {array[A,N]}");
+     if(array.GetLength(0) <= column)
+     Console.Write($" позиции  нет ");
+     else Console.Write($"на позиции {row+1},{column+1} находится число {array[row,column]}");
 }
 
     
 
-NamberArray(array,A,N);
+NamberArray(array,row,column);
 Console.WriteLine( ""  );
